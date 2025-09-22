@@ -2,35 +2,51 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Mon Portfolio - Mrsaltyx</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Mrsaltyx</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Portfolio de Mrsaltyx</h1>
-        <p>Alternant Data Analyst en projet de devenir Ingénieur IA.</p>
+        <div class="container">
+            <h1>Mrsaltyx</h1>
+            <p>Alternant Data Analyst passionné par l'IA et le Machine Learning.</p>
+        </div>
     </header>
+
     <main>
-        <section>
+        <section class="container">
             <h2>Mes Projets</h2>
-            <div class="projects">
-                <div class="project-card">
-                    <h3><a href="https://github.com/Mrsaltyx/Disaster_Tweet">NLP Disaster Tweets</a></h3>
-                    <p>Projet Kaggle disaster tweet — analyse et prédiction sur les tweets liés aux catastrophes avec le NLP et le machine learning.</p>
-                </div>
-                <div class="project-card">
-                    <h3><a href="https://github.com/Mrsaltyx/Titanic">Titanic Survival Prediction</a></h3>
-                    <p>Projet de machine learning pour prédire la survie des passagers du Titanic.</p>
-                </div>
-                <div class="project-card">
-                    <h3><a href="https://github.com/Mrsaltyx/Cifar-10">Classification d'images CIFAR-10</a></h3>
-                    <p>Projet Python pour la classification d’images sur le dataset CIFAR-10 avec des modèles d’apprentissage automatique.</p>
-                </div>
+            <div class="projects-grid">
+                <article class="project-card">
+                    <h3><a href="https://github.com/Mrsaltyx/Disaster_Tweet" target="_blank" rel="noopener noreferrer">NLP Disaster Tweets</a></h3>
+                    <p>Projet Kaggle d'analyse et de prédiction sur les tweets liés aux catastrophes en utilisant des techniques de **Natural Language Processing (NLP)** et de machine learning.</p>
+                </article>
+                <article class="project-card">
+                    <h3><a href="https://github.com/Mrsaltyx/Titanic" target="_blank" rel="noopener noreferrer">Titanic Survival Prediction</a></h3>
+                    <p>Un classique du **machine learning** pour prédire la survie des passagers du Titanic. Le projet inclut l'exploration des données et la création de modèles de classification.</p>
+                </article>
+                <article class="project-card">
+                    <h3><a href="https://github.com/Mrsaltyx/Cifar-10" target="_blank" rel="noopener noreferrer">Classification d'images CIFAR-10</a></h3>
+                    <p>Projet de **vision par ordinateur** pour la classification d'images sur le jeu de données CIFAR-10, explorant des modèles d'apprentissage automatique et de **Deep Learning**.</p>
+                </article>
+                <article class="project-card">
+                    <h3><a href="https://github.com/Mrsaltyx/House-Price-Prediction" target="_blank" rel="noopener noreferrer">Housing Price Prediction</a></h3>
+                    <p>Projet de **régression** pour estimer les prix de l'immobilier en se basant sur différentes caractéristiques, une application concrète du machine learning.</p>
+                </article>
+                <article class="project-card">
+                    <h3><a href="https://github.com/Mrsaltyx/Spam-Classifier" target="_blank" rel="noopener noreferrer">Spam Classifier</a></h3>
+                    <p>Un projet d'apprentissage supervisé pour classer les messages textes en **spam ou non-spam**, parfait pour mettre en pratique les techniques de NLP.</p>
+                </article>
             </div>
         </section>
     </main>
+
     <footer>
-        <p>© 2025 Mrsaltyx</p>
+        <div class="container">
+            <p>&copy; 2025 Mrsaltyx. Tous droits réservés.</p>
+        </div>
     </footer>
 </body>
 </html>
