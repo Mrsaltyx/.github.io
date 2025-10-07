@@ -1,156 +1,176 @@
-/* Importation de la police Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+/* --- Styles Généraux --- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
 
-/* Règles de base pour le corps de la page */
-body {
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #121212; /* Fond sombre */
-    color: #e0e0e0; /* Texte clair */
-    line-height: 1.6;
+:root {
+    --primary-color: #ffffff;
+    --secondary-color: #a7a7a7;
+    --background-color: #111111;
+    --card-background-color: #1c1c1e;
+    --accent-color: #3d52d5; /* Un bleu pour contraster */
 }
 
-.container {
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--background-color);
+    color: var(--primary-color);
+    margin: 0;
+    padding: 40px 20px;
+}
+
+main {
     max-width: 1000px;
-    margin: 0 auto;
+    margin: auto;
+}
+
+h2 {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-align: center;
+    margin-bottom: 60px;
+    color: var(--primary-color);
+}
+
+section {
+    padding: 60px 0;
+}
+
+/* --- Section Parcours (Timeline) --- */
+.timeline {
+    position: relative;
+    padding: 20px 0;
+    /* La ligne verticale de la timeline */
+    border-left: 2px solid var(--card-background-color);
+    margin-left: 20px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    padding-left: 40px;
+}
+
+/* Le point sur la ligne */
+.timeline-dot {
+    position: absolute;
+    left: -9px; /* (largeur du point / 2) - (largeur de la ligne / 2) */
+    top: 5px;
+    height: 16px;
+    width: 16px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    border: 3px solid var(--background-color);
+}
+
+.timeline-date {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.timeline-content {
+    background-color: var(--card-background-color);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: var(--primary-color);
+}
+
+.timeline-content h4 {
+    margin: 5px 0;
+    font-weight: 400;
+    color: var(--secondary-color);
+}
+
+.timeline-content ul {
+    padding-left: 20px;
+    color: var(--secondary-color);
+}
+
+/* --- Section Projets --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--card-background-color);
+    border-radius: 15px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    
+    /* C'est ici qu'on prépare l'animation ! */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* L'ANIMATION au survol */
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.project-image img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.project-info {
     padding: 20px;
 }
 
-/* En-tête */
-header {
-    background-color: #1f1f1f;
-    padding: 40px 0;
-    text-align: center;
-    border-bottom: 2px solid #333;
+.project-info h3 {
+    margin-top: 0;
+    font-size: 1.4rem;
 }
 
-header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    color: #4CAF50; /* Vert pour le contraste */
+.project-info span {
+    color: var(--secondary-color);
+    font-size: 0.9rem;
 }
 
-header p {
-    font-size: 1.2em;
-    color: #b0b0b0;
+.project-info p {
+    color: var(--secondary-color);
+    font-size: 1rem;
+    margin: 15px 0;
 }
 
-/* Section principale */
-main h2 {
-    font-size: 2em;
-    color: #4CAF50;
-    text-align: center;
-    margin-top: 40px;
-    margin-bottom: 20px;
-}
-
-.projects-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-/* Cartes de projet */
-.project-card {
-    background-color: #1e1e1e;
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    position: relative;
-    min-height: 150px;
+.project-tags {
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
-}
-
-.project-card h3 a {
-    color: #66bb6a;
-    text-decoration: none;
-    font-size: 1.5em;
-    transition: color 0.3s ease;
-}
-
-.project-card h3 a:hover {
-    color: #81c784;
-}
-
-.project-card p {
-    font-style: italic;
-    font-size: 0.9em;
-    margin-top: 10px;
-}
-
-/* Section À propos */
-#about {
-    text-align: center;
-    margin-top: 40px;
-}
-
-#about p {
-    font-size: 1.1em;
-    max-width: 800px;
-    margin: 0 auto;
-    color: #b0b0b0;
-}
-
-#about strong {
-    color: #4CAF50;
-}
-
-/* Section Contact */
-#contact {
-    text-align: center;
-    margin-top: 40px;
-}
-
-.social-links {
+    flex-wrap: wrap;
+    gap: 10px;
     margin-top: 20px;
 }
 
+.project-tags span {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 700;
+}
+
+
+/* --- Section Contact / Réseaux --- */
+.social-links {
+    text-align: center;
+}
+
 .social-links a {
-    color: #66bb6a;
-    text-decoration: none;
-    font-size: 1.2em;
-    margin: 0 15px;
+    color: var(--secondary-color);
+    font-size: 2.5rem;
+    margin: 0 20px;
     transition: color 0.3s ease;
 }
 
 .social-links a:hover {
-    color: #81c784;
-}
-
-/* Pied de page */
-footer {
-    background-color: #1f1f1f;
-    text-align: center;
-    padding: 20px 0;
-    margin-top: 40px;
-    border-top: 2px solid #333;
-}
-
-footer p {
-    margin: 0;
-    color: #777;
-    font-size: 0.9em;
-}
-
-/* Design responsive */
-@media (max-width: 600px) {
-    .container {
-        padding: 10px;
-    }
-    header h1 {
-        font-size: 2em;
-    }
-    main h2 {
-        font-size: 1.5em;
-    }
+    color: var(--accent-color);
 }
