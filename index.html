@@ -3,62 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Mrsaltyx</title>
+    <title>[Votre Nom] - Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Mrsaltyx</h1>
-            <p>Alternant Data Analyst passionné par l'IA et le Machine Learning.</p>
-        </div>
-    </header>
 
     <main>
-        <section class="container" id="about">
-            <h2>À propos de moi</h2>
-            <div class="about-content">
-                <p>En tant qu'alternant Data Analyst passionné par l'Intelligence Artificielle et le Machine Learning, je suis en pleine transition pour devenir Ingénieur IA. J'ai de solides compétences en <strong>Python</strong>, <strong>SQL</strong>, et une bonne maîtrise des bibliothèques de data science telles que <strong>Pandas</strong>, <strong>Scikit-learn</strong>, et <strong>NumPy</strong>. Je suis constamment à la recherche de nouvelles opportunités pour appliquer mes connaissances et résoudre des problèmes complexes.</p>
-            </div>
+        <section id="parcours">
+            <h2>Mon Parcours</h2>
+            <div class="timeline">
+                
+                <div class="timeline-item"> 
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">Sept 2024 - Présent</div>
+                    <div class="timeline-content">
+                        <h3>Alternance Data Analyst</h3>
+                        <h4>Amundi</h4>
+                        <ul>
+                            <li>Création de KPI JIRA.</li>
+                            <li>Mise en place de script d'automatisation.</li>
+                        </ul>
+                        <ul>
+                            <li> Formation Open Classrooms : Data Analyst</li>
+                            <li>Technologies : Python, SQL</li>
+                        </ul>
+                    </div>
+                </div>
         </section>
 
-        <section class="container">
+        <section id="projets">
             <h2>Mes Projets</h2>
-            <div class="projects-grid">
-                <article class="project-card">
-                    <h3><a href="https://github.com/Mrsaltyx/Disaster_Tweet" target="_blank" rel="noopener noreferrer">NLP Disaster Tweets</a></h3>
-                    <p>Projet Kaggle pour prédire les tweets liés aux catastrophes en utilisant le NLP et les modèles de Machine Learning. Ce projet inclut l'analyse exploratoire des données, le nettoyage du texte, et la comparaison de différents modèles comme le Naive Bayes et les forêts aléatoires.</p>
-                </article>
-                <article class="project-card">
-                    <h3><a href="https://github.com/Mrsaltyx/Titanic" target="_blank" rel="noopener noreferrer">Titanic Survival Prediction</a></h3>
-                    <p>Un projet classique de Machine Learning pour la prédiction de survie des passagers du Titanic, incluant l'exploration de données, la sélection de fonctionnalités et l'optimisation des hyperparamètres.</p>
-                </article>
-                <article class="project-card">
-                    <h3><a href="https://github.com/Mrsaltyx/Cifar-10" target="_blank" rel="noopener noreferrer">Classification d'images CIFAR-10</a></h3>
-                    <p>Projet de vision par ordinateur pour la classification d'images sur le jeu de données CIFAR-10 avec des modèles de Deep Learning. Implémentation de réseaux de neurones convolutionnels (CNN) en utilisant des frameworks comme TensorFlow ou PyTorch.</p>
-                </article>
-                <article class="project-card">
-                    <h3><a href="https://github.com/Mrsaltyx/introvert" target="_blank" rel="noopener noreferrer">Introverts</a></h3>
-                    <p>Projet Kaggle afin de prédire les introvertis selon différents critères.</p>
-                </article>
-            </div>
+            <div class="project-grid">
+
+                <a href="https://github.com/Mrsaltyx/Disaster_Tweet" target="_blank" class="project-card">
+                    <div class="project-image">
+                        <img src="https://www.kaggle.com/competitions/17777/images/header" alt="Aperçu du projet Disaster Tweet">
+                    </div>
+                    <div class="project-info">
+                        <h3>Disaster Tweet</h3>
+                        <p>Modéle analyse NLP.</p>
+                        <div class="project-tags">
+                            <span>#python</span>
+                            <span>#scikit-learn</span>
+                            <span>#NLP</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://github.com/Mrsaltyx/Cifar-10" target="_blank" class="project-card">
+                    <div class="project-image">
+                        <img src="https://www.kaggle.com/competitions/3649/images/header" alt="Aperçu du projet Cifar-10">
+                    </div>
+                    <div class="project-info">
+                        <h3>CIFAR 10 </h3>                        
+                        <p>Classification d'image via CNN</p>
+                        <div class="project-tags">
+                            <span>#python</span>
+                            <span>#scikit-learn</span>
+                            <span>#CNN</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://github.com/Mrsaltyx/introvert" target="_blank" class="project-card">
+                    <div class="project-image">
+                        <img src="https://www.kaggle.com/competitions/91718/images/header" alt="Aperçu du projet introvert vs extravert">
+                    </div>
+                    <div class="project-info">
+                        <h3>Introvert vs Extravert</h3>
+                        <p>Predire les introvertis a partir des extravertis.</p>
+                        <div class="project-tags">
+                            <span>#python</span>
+                            <span>#scikit-learn</span>
+                            <span>#XGBOOST</span>
+                        </div>
+                    </div>
+                </a>
+                <a href="https://github.com/Mrsaltyx/titanic.ipynb" target="_blank" class="project-card">
+                    <div class="project-image">
+                        <img src="c:\Users\toto0\AppData\Local\Temp\header.jpg" alt="Aperçu du projet Satori">
+                    </div>
+                    <div class="project-info">
+                        <h3>Titanic</h3>
+                        <p>Prédire les survivants du titanic.</p>
+                        <div class="project-tags">
+                            <span>#python</span>
+                            <span>#scikit-learn</span>
+                            <span>#NLTK</span>
+                        </div>
+                    </div>
+                </a>
+                </div>
         </section>
 
-        <section class="container" id="contact">
-            <h2>Connectez-vous avec moi</h2>
+        <section id="contact">
+            <h2>Contact</h2>
             <div class="social-links">
-                <a href="www.linkedin.com/in/thomas-thouvenin-755743292" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-                <a href="https://github.com/Mrsaltyx" target="_blank" rel="noopener noreferrer">GitHub</a>
-                <a href="thouvenin_thomas@protonmail.com">Email</a>
+                <a href="https://github.com/Mrsaltyx" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                <a href="www.linkedin.com/in/thomas-thouvenin-755743292" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
             </div>
         </section>
     </main>
 
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Mrsaltyx. Tous droits réservés.</p>
-        </div>
-    </footer>
 </body>
 </html>
