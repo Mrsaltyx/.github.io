@@ -1,48 +1,87 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content="Portfolio de Thomas Thouvenin — Data Analyst : projets, parcours, compétences et contact."/>
     <title>THOUVENIN Thomas - Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 </head>
 <body>
+    <header class="site-header">
+        <div class="container">
+            <h1>Thomas Thouvenin</h1>
+            <p class="subtitle">Data Analyst | Python • SQL • Machine Learning</p>
+            <nav aria-label="Navigation principale">
+                <ul class="main-nav">
+                    <li><a href="#parcours">Parcours</a></li>
+                    <li><a href="#projets">Projets</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <main>
-        <section id="parcours">
-            <h2>Mon Parcours</h2>
-            <div class="timeline">
-                
-                <div class="timeline-item"> 
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-date">Sept 2024 - Présent</div>
-                    <div class="timeline-content">
-                        <h3>Alternance Data Analyst</h3>
-                        <h4>Amundi</h4>
-                        <ul>
-                            <li>Création de KPI JIRA.</li>
-                            <li>Mise en place de script d'automatisation.</li>
-                        </ul>
-                        <ul>
-                            <li> Formation Open Classrooms : Data Analyst</li>
-                            <li>Technologies : Python, SQL</li>
-                        </ul>
+    <main class="container" role="main">
+        <section id="parcours" aria-labelledby="parcours-title">
+            <h2 id="parcours-title">Mon parcours</h2>
+
+            <p class="intro">
+                Data Analyst en alternance chez Amundi depuis septembre 2024. Passionné par la transformation des
+                données en indicateurs exploitables, j'utilise Python et SQL au quotidien et je développe
+                des automatisations pour améliorer la productivité.
+            </p>
+
+            <div class="timeline" role="list">
+                <article class="timeline-item" role="listitem">
+                    <div class="timeline-dot" aria-hidden="true"></div>
+                    <div class="timeline-meta">
+                        <time datetime="2024-09">Sept 2024 – Présent</time>
+                        <span class="timeline-role">Alternance Data Analyst</span>
+                        <span class="timeline-organization">Amundi</span>
                     </div>
-                </div>
+                    <div class="timeline-body">
+                        <ul>
+                            <li>Création et suivi de KPI JIRA pour le pilotage des équipes.</li>
+                            <li>Conception de scripts d'automatisation (ETL légers) en Python.</li>
+                            <li>Exploration et nettoyage de données, conception de dashboards de suivi.</li>
+                        </ul>
+                        <p class="small">Technologies : Python, SQL, Pandas, (notebooks), scikit-learn, NLP.</p>
+                    </div>
+                </article>
+
+
+            <div class="skills">
+                <h3>Compétences clés</h3>
+                <ul class="skill-list">
+                    <li>Analyse exploratoire / Visualisation (Matplotlib, Seaborn)</li>
+                    <li>Python (Pandas, NumPy), SQL</li>
+                    <li>Machine Learning supervisé (scikit-learn, XGBoost)</li>
+                    <li>Traitement de texte (NLTK) et NLP basique</li>
+                    <li>Automatisation et scripting</li>
+                </ul>
+            </div>
+
+            <div class="certifications">
+                <h3>Certifications & formations complémentaires</h3>
+                <ul>
+                    <li>Data Analyst — OpenClassrooms (parcours en cours)</li>
+                    <li>MOOCs : Python pour la data, SQL avancé (préciser si souhaité)</li>
+                </ul>
+            </div>
         </section>
 
-        <section id="projets">
-            <h2>Mes Projets</h2>
+        <section id="projets" aria-labelledby="projets-title">
+            <h2 id="projets-title">Mes projets</h2>
             <div class="project-grid">
-
-                <a href="https://github.com/Mrsaltyx/Disaster_Tweet" target="_blank" class="project-card">
+                <a href="https://github.com/Mrsaltyx/Disaster_Tweet" target="_blank" rel="noopener" class="project-card">
                     <div class="project-image">
-                        <img src="https://www.kaggle.com/competitions/17777/images/header" alt="Aperçu du projet Disaster Tweet">
+                        <img src="https://via.placeholder.com/600x300?text=Disaster+Tweet" alt="Aperçu du projet Disaster Tweet" />
                     </div>
                     <div class="project-info">
                         <h3>Disaster Tweet</h3>
-                        <p>Modéle analyse NLP.</p>
+                        <p>Modèle de classification NLP pour détecter des tweets liés à des catastrophes.</p>
                         <div class="project-tags">
                             <span>#python</span>
                             <span>#scikit-learn</span>
@@ -50,59 +89,83 @@
                         </div>
                     </div>
                 </a>
-                <a href="https://github.com/Mrsaltyx/Cifar-10" target="_blank" class="project-card">
+
+                <a href="https://github.com/Mrsaltyx/Cifar-10" target="_blank" rel="noopener" class="project-card">
                     <div class="project-image">
-                        <img src="https://www.kaggle.com/competitions/3649/images/header" alt="Aperçu du projet Cifar-10">
+                        <img src="https://via.placeholder.com/600x300?text=CIFAR-10" alt="Aperçu du projet CIFAR-10" />
                     </div>
                     <div class="project-info">
-                        <h3>CIFAR 10 </h3>                        
-                        <p>Classification d'image via CNN</p>
+                        <h3>CIFAR-10</h3>
+                        <p>Classification d'images avec un CNN — expérimentation et évaluation des modèles.</p>
                         <div class="project-tags">
                             <span>#python</span>
-                            <span>#scikit-learn</span>
                             <span>#CNN</span>
+                            <span>#deep-learning</span>
                         </div>
                     </div>
                 </a>
-                <a href="https://github.com/Mrsaltyx/introvert" target="_blank" class="project-card">
+
+                <a href="https://github.com/Mrsaltyx/introvert" target="_blank" rel="noopener" class="project-card">
                     <div class="project-image">
-                        <img src="https://www.kaggle.com/competitions/91718/images/header" alt="Aperçu du projet introvert vs extravert">
+                        <img src="https://via.placeholder.com/600x300?text=Introvert+vs+Extravert" alt="Aperçu du projet Introvert vs Extravert" />
                     </div>
                     <div class="project-info">
                         <h3>Introvert vs Extravert</h3>
-                        <p>Predire les introvertis a partir des extravertis.</p>
+                        <p>Prédiction de traits de personnalité à partir d'un dataset textuel / numérique.</p>
                         <div class="project-tags">
                             <span>#python</span>
-                            <span>#scikit-learn</span>
-                            <span>#XGBOOST</span>
+                            <span>#XGBoost</span>
+                            <span>#feature-engineering</span>
                         </div>
                     </div>
                 </a>
-                <a href="https://github.com/Mrsaltyx/titanic.ipynb" target="_blank" class="project-card">
+
+                <a href="https://github.com/Mrsaltyx/titanic.ipynb" target="_blank" rel="noopener" class="project-card">
                     <div class="project-image">
-                        <img src="c:\Users\toto0\AppData\Local\Temp\header.jpg" alt="Aperçu du projet Satori">
+                        <img src="https://via.placeholder.com/600x300?text=Titanic" alt="Aperçu du projet Titanic" />
                     </div>
                     <div class="project-info">
                         <h3>Titanic</h3>
-                        <p>Prédire les survivants du titanic.</p>
+                        <p>Analyse et prédiction des survivants — pipeline de traitement et modèle simple.</p>
                         <div class="project-tags">
                             <span>#python</span>
                             <span>#scikit-learn</span>
-                            <span>#NLTK</span>
+                            <span>#EDA</span>
                         </div>
                     </div>
                 </a>
-                </div>
-        </section>
-
-        <section id="contact">
-            <h2>Contact</h2>
-            <div class="social-links">
-                <a href="https://github.com/Mrsaltyx" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-                <a href="www.linkedin.com/in/thomas-thouvenin-755743292" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
             </div>
         </section>
+
+        <section id="contact" aria-labelledby="contact-title">
+            <h2 id="contact-title">Contact</h2>
+            <p>Vous pouvez me retrouver et me contacter via :</p>
+            <div class="social-links" role="navigation" aria-label="Liens sociaux">
+                <a href="https://github.com/Mrsaltyx" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github" aria-hidden="true"></i><span class="sr-only">GitHub</span></a>
+                <a href="https://www.linkedin.com/in/thomas-thouvenin-755743292" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin" aria-hidden="true"></i><span class="sr-only">LinkedIn</span></a>
+                <a href="mailto:ton.email@example.com" title="Envoyer un email"><i class="fas fa-envelope" aria-hidden="true"></i><span class="sr-only">Email</span></a>
+            </div>
+
+            <form class="contact-form" action="#" method="post" aria-label="Formulaire de contact (exemple)">
+                <label for="name">Nom</label>
+                <input id="name" name="name" type="text" placeholder="Votre nom" />
+
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="votre@email.com" />
+
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Bonjour, ..."></textarea>
+
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
     </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="year">2025</span> Thomas Thouvenin — Tous droits réservés.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
