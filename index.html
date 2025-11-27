@@ -1,274 +1,278 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon Portfolio - Data Analyst & Aspirant Ingénieur IA</title>
-    <!-- Chargement de Tailwind CSS pour un design rapide et responsive -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* Configuration de base pour la police Inter et le défilement fluide */
-        body {
-            font-family: 'Inter', sans-serif;
-            scroll-behavior: smooth;
-            background-color: #111827; /* Gris très foncé (Dark Mode) */
-            color: #d1d5db; /* Texte gris clair */
-        }
-        /* Style pour les sections (padding et centrage) */
-        section {
-            padding: 5rem 1rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-        /* Animation simple de survol pour les cartes de projet */
-        .project-card {
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
-        }
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
-            border-color: #6366f1; /* Bordure indigo au survol */
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Portfolio - Thomas Thouvenin | Data Analyst & Aspirant Ingénieur IA</title>
+    <!-- Chargement de Tailwind CSS pour un design rapide et responsive -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Configuration de base pour la police Inter et le défilement fluide */
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+            background-color: #111827; /* Gris très foncé (Dark Mode) */
+            color: #d1d5db; /* Texte gris clair */
+        }
+        /* Style pour les sections (padding et centrage) */
+        section {
+            padding: 5rem 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        /* Animation simple de survol pour les cartes de projet */
+        .project-card {
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -2px rgba(0, 0, 0, 0.2);
+        }
+        .project-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 25px -5px rgba(0, 0, 0, 0.4), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+            border-color: #6366f1; /* Bordure indigo au survol */
+        }
+    </style>
 </head>
 <body class="text-gray-300 bg-gray-900">
 
-    <!-- BARRE DE NAVIGATION (Header) -->
-    <header class="sticky top-0 z-50 bg-gray-800 shadow-xl border-b border-indigo-700">
-        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
-            <a href="#home" class="text-2xl font-bold text-indigo-400 hover:text-indigo-200 transition duration-300 rounded-lg p-1">
-                Thouvenin Thomas
-            </a>
-            <div class="hidden md:flex space-x-6">
-                <a href="#about" class="text-gray-300 hover:text-indigo-400 transition duration-300 font-medium p-2 rounded-lg">À Propos</a>
-                <a href="#skills" class="text-gray-300 hover:text-indigo-400 transition duration-300 font-medium p-2 rounded-lg">Compétences</a>
-                <a href="#projects" class="text-gray-300 hover:text-indigo-400 transition duration-300 font-medium p-2 rounded-lg">Projets</a>
-                <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition duration-300 font-medium p-2 rounded-lg">Contact</a>
-            </div>
-            <!-- Bouton Menu Mobile -->
-            <button id="menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-700 transition duration-300">
-                <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
-            </button>
-        </nav>
+    <!-- BARRE DE NAVIGATION (Header) -->
+    <header class="sticky top-0 z-50 bg-gray-800 shadow-xl border-b border-indigo-700">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <a href="#home" class="text-2xl font-bold text-indigo-400 hover:text-indigo-200 transition duration-300 rounded-lg p-1">
+                Thouvenin Thomas
+            </a>
+            <div class="hidden md:flex space-x-6">
+                <a href="#about" class="text-gray-300 hover:text-indigo-400 transition duration-300 font-medium p-2 rounded-lg">À Propos</a>
+                <a href="#skills" class="text-gray-300 hover:text-indigo-400 transition duration-300 font-medium p-2 rounded-lg">Compétences</a>
+                <a href="#projects" class="text-gray-300 hover:text-indigo-400 transition duration-300 font-medium p-2 rounded-lg">Projets</a>
+                <a href="#contact" class="text-gray-300 hover:text-indigo-400 transition duration-300 font-medium p-2 rounded-lg">Contact</a>
+            </div>
+            <!-- Bouton Menu Mobile -->
+            <button id="menu-button" class="md:hidden p-2 rounded-lg hover:bg-gray-700 transition duration-300">
+                <svg class="w-6 h-6 text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
 
-        <!-- Menu Mobile Déroulant -->
-        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 pb-2 border-t border-gray-700">
-            <a href="#about" class="block px-4 py-2 text-gray-300 hover:bg-indigo-700 hover:text-white transition duration-300" onclick="toggleMenu()">À Propos</a>
-            <a href="#skills" class="block px-4 py-2 text-gray-300 hover:bg-indigo-700 hover:text-white transition duration-300" onclick="toggleMenu()">Compétences</a>
-            <a href="#projects" class="block px-4 py-2 text-gray-300 hover:bg-indigo-700 hover:text-white transition duration-300" onclick="toggleMenu()">Projets</a>
-            <a href="#contact" class="block px-4 py-2 text-gray-300 hover:bg-indigo-700 hover:text-white transition duration-300" onclick="toggleMenu()">Contact</a>
-        </div>
-    </header>
+        <!-- Menu Mobile Déroulant -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 pb-2 border-t border-gray-700">
+            <a href="#about" class="block px-4 py-2 text-gray-300 hover:bg-indigo-700 hover:text-white transition duration-300" onclick="toggleMenu()">À Propos</a>
+            <a href="#skills" class="block px-4 py-2 text-gray-300 hover:bg-indigo-700 hover:text-white transition duration-300" onclick="toggleMenu()">Compétences</a>
+            <a href="#projects" class="block px-4 py-2 text-gray-300 hover:bg-indigo-700 hover:text-white transition duration-300" onclick="toggleMenu()">Projets</a>
+            <a href="#contact" class="block px-4 py-2 text-gray-300 hover:bg-indigo-700 hover:text-white transition duration-300" onclick="toggleMenu()">Contact</a>
+        </div>
+    </header>
 
-    <!-- SECTION PRINCIPALE (Hero) -->
-    <section id="home" class="min-h-screen flex items-center justify-center bg-gray-900 text-center">
-        <div class="p-6 md:p-12 rounded-xl max-w-4xl">
-            <img src="https://placehold.co/120x120/4f46e5/ffffff?text=Moi" alt="Votre Photo de Profil"
-                 class="w-32 h-32 rounded-full mx-auto mb-6 shadow-2xl border-4 border-indigo-500">
-            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4 leading-tight">
-                Bonjour, je suis <span class="text-indigo-400">Thouvenin Thomas</span>
-            </h1>
-            <p class="text-xl md:text-3xl text-indigo-300 font-light mb-8">
-                Data Analyst en alternance 📊 <br class="sm:hidden">| En transition vers l'Ingénierie IA 🧠
-            </p>
-            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-                <a href="#projects" class="inline-block px-8 py-3 bg-indigo-600 text-white font-semibold rounded-full shadow-lg shadow-indigo-500/50 hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
-                    Voir mes Projets
-                </a>
-                <a href="https://www.linkedin.com/in/thomas-thouvenin-755743292l" target="_blank" class="inline-block px-8 py-3 bg-gray-700 text-indigo-400 font-semibold border-2 border-indigo-600 rounded-full shadow-md hover:bg-gray-600 transition duration-300 transform hover:scale-105">
-                    LinkedIn
-                </a>
-            </div>
-        </div>
-    </section>
+    <!-- SECTION PRINCIPALE (Hero) -->
+    <section id="home" class="min-h-screen flex items-center justify-center bg-gray-900 text-center">
+        <div class="p-6 md:p-12 rounded-xl max-w-4xl">
+            <img src="https://placehold.co/120x120/4f46e5/ffffff?text=TT" alt="Votre Photo de Profil"
+                 class="w-32 h-32 rounded-full mx-auto mb-6 shadow-2xl border-4 border-indigo-500">
+            <h1 class="text-5xl md:text-7xl font-extrabold text-white mb-4 leading-tight">
+                Bonjour, je suis <span class="text-indigo-400">Thouvenin Thomas</span>
+            </h1>
+            <p class="text-xl md:text-3xl text-indigo-300 font-light mb-8">
+                Data Analyst en alternance 📊 <br class="sm:hidden">| En transition vers l'Ingénierie IA 🧠
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                <a href="#projects" class="inline-block px-8 py-3 bg-indigo-600 text-white font-semibold rounded-full shadow-lg shadow-indigo-500/50 hover:bg-indigo-700 transition duration-300 transform hover:scale-105">
+                    Voir mes Projets
+                </a>
+                <!-- LIEN LINKEDIN MIS À JOUR -->
+                <a href="https://www.linkedin.com/in/thomas-thouvenin-755743292" target="_blank" class="inline-block px-8 py-3 bg-gray-700 text-indigo-400 font-semibold border-2 border-indigo-600 rounded-full shadow-md hover:bg-gray-600 transition duration-300 transform hover:scale-105">
+                    LinkedIn
+                </a>
+            </div>
+        </div>
+    </section>
 
-    <!-- SECTION À PROPOS -->
-    <section id="about" class="bg-gray-800 border-t border-b border-gray-700">
-        <h2 class="text-4xl font-bold text-center text-indigo-400 mb-12">À Propos de Moi</h2>
-        <div class="bg-gray-700 p-8 rounded-2xl shadow-2xl border-l-4 border-indigo-500">
-            <p class="text-lg leading-relaxed mb-4 text-gray-200">
-                Actuellement en alternance en tant que **Data Analyst**, j'ai développé une solide expertise dans le traitement, l'analyse et la visualisation de grands volumes de données. Ma passion pour l'innovation me pousse aujourd'hui vers l'**Intelligence Artificielle**.
-            </p>
-            <p class="text-lg leading-relaxed mb-4 text-gray-200">
-                Mon objectif est de fusionner mes bases en data analysis (SQL, Python/Pandas) avec les techniques avancées du Machine Learning et du Deep Learning. Je cherche constamment à transformer les données brutes en solutions intelligentes et prédictives.
-            </p>
-            <p class="text-lg leading-relaxed font-semibold text-indigo-400">
-                Ce portfolio est la vitrine de ma transition : vous y trouverez mes travaux passés en analyse, ainsi que mes premiers projets concrets en IA pour démontrer ma montée en compétences.
-            </p>
-            <div class="mt-8 flex flex-wrap justify-center space-x-4 text-sm font-semibold">
-                <span class="bg-indigo-600 text-white px-3 py-1 rounded-full m-1 shadow-md">Alternance</span>
-                <span class="bg-indigo-600 text-white px-3 py-1 rounded-full m-1 shadow-md">Python</span>
-                <span class="bg-indigo-600 text-white px-3 py-1 rounded-full m-1 shadow-md">Apprentissage Machine</span>
-                <span class="bg-indigo-600 text-white px-3 py-1 rounded-full m-1 shadow-md">Visualisation de Données</span>
-            </div>
-        </div>
-    </section>
+    <!-- SECTION À PROPOS -->
+    <section id="about" class="bg-gray-800 border-t border-b border-gray-700">
+        <h2 class="text-4xl font-bold text-center text-indigo-400 mb-12">À Propos de Moi</h2>
+        <div class="bg-gray-700 p-8 rounded-2xl shadow-2xl border-l-4 border-indigo-500">
+            <p class="text-lg leading-relaxed mb-4 text-gray-200">
+                Actuellement en alternance en tant que **Data Analyst**, j'ai développé une solide expertise dans le traitement, l'analyse et la visualisation de grands volumes de données. Ma passion pour l'innovation me pousse aujourd'hui vers l'**Intelligence Artificielle**.
+            </p>
+            <p class="text-lg leading-relaxed mb-4 text-gray-200">
+                Mon objectif est de fusionner mes bases en data analysis (SQL, Python/Pandas) avec les techniques avancées du Machine Learning et du Deep Learning. Je cherche constamment à transformer les données brutes en solutions intelligentes et prédictives.
+            </p>
+            <p class="text-lg leading-relaxed font-semibold text-indigo-400">
+                Ce portfolio est la vitrine de ma transition : vous y trouverez mes travaux passés en analyse, ainsi que mes premiers projets concrets en IA pour démontrer ma montée en compétences.
+            </p>
+            <div class="mt-8 flex flex-wrap justify-center space-x-4 text-sm font-semibold">
+                <span class="bg-indigo-600 text-white px-3 py-1 rounded-full m-1 shadow-md">Alternance</span>
+                <span class="bg-indigo-600 text-white px-3 py-1 rounded-full m-1 shadow-md">Python</span>
+                <span class="bg-indigo-600 text-white px-3 py-1 rounded-full m-1 shadow-md">Apprentissage Machine</span>
+                <span class="bg-indigo-600 text-white px-3 py-1 rounded-full m-1 shadow-md">Visualisation de Données</span>
+            </div>
+        </div>
+    </section>
 
-    <!-- SECTION COMPÉTENCES -->
-    <section id="skills" class="bg-gray-900">
-        <h2 class="text-4xl font-bold text-center text-indigo-400 mb-12">Compétences Techniques</h2>
+    <!-- SECTION COMPÉTENCES -->
+    <section id="skills" class="bg-gray-900">
+        <h2 class="text-4xl font-bold text-center text-indigo-400 mb-12">Compétences Techniques</h2>
 
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
 
-            <!-- Catégorie Data Analysis -->
-            <div class="bg-gray-800 p-6 rounded-xl shadow-xl border-t-4 border-blue-500 hover:bg-gray-700 transition duration-300">
-                <h3 class="text-xl font-semibold mb-3 text-blue-400">Data Analysis</h3>
-                <ul class="space-y-2 text-gray-400">
-                    <li class="flex items-center"><span class="text-blue-500 mr-2">✦</span> Python (Pandas, NumPy)</li>
-                    <li class="flex items-center"><span class="text-blue-500 mr-2">✦</span> SQL (PostgreSQL, MySQL)</li>
-                    <li class="flex items-center"><span class="text-blue-500 mr-2">✦</span> Power BI / Tableau</li>
-                    <li class="flex items-center"><span class="text-blue-500 mr-2">✦</span> Excel Avancé</li>
-                </ul>
-            </div>
+            <!-- Catégorie Data Analysis -->
+            <div class="bg-gray-800 p-6 rounded-xl shadow-xl border-t-4 border-blue-500 hover:bg-gray-700 transition duration-300">
+                <h3 class="text-xl font-semibold mb-3 text-blue-400">Data Analysis</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li class="flex items-center"><span class="text-blue-500 mr-2">✦</span> Python (Pandas, NumPy)</li>
+                    <li class="flex items-center"><span class="text-blue-500 mr-2">✦</span> SQL (PostgreSQL, MySQL)</li>
+                    <li class="flex items-center"><span class="text-blue-500 mr-2">✦</span> Power BI / Tableau</li>
+                    <li class="flex items-center"><span class="text-blue-500 mr-2">✦</span> Excel Avancé</li>
+                </ul>
+            </div>
 
-            <!-- Catégorie Machine Learning & IA -->
-            <div class="bg-gray-800 p-6 rounded-xl shadow-xl border-t-4 border-green-500 hover:bg-gray-700 transition duration-300">
-                <h3 class="text-xl font-semibold mb-3 text-green-400">IA & M.L.</h3>
-                <ul class="space-y-2 text-gray-400">
-                    <li class="flex items-center"><span class="text-green-500 mr-2">✦</span> Scikit-learn</li>
-                    <li class="flex items-center"><span class="text-green-500 mr-2">✦</span> TensorFlow / PyTorch (Bases)</li>
-                    <li class="flex items-center"><span class="text-green-500 mr-2">✦</span> Modélisation Prédictive</li>
-                    <li class="flex items-center"><span class="text-green-500 mr-2">✦</span> NLP (Exploration)</li>
-                </ul>
-            </div>
+            <!-- Catégorie Machine Learning & IA -->
+            <div class="bg-gray-800 p-6 rounded-xl shadow-xl border-t-4 border-green-500 hover:bg-gray-700 transition duration-300">
+                <h3 class="text-xl font-semibold mb-3 text-green-400">IA & M.L.</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li class="flex items-center"><span class="text-green-500 mr-2">✦</span> Scikit-learn</li>
+                    <li class="flex items-center"><span class="text-green-500 mr-2">✦</span> TensorFlow / PyTorch (Bases)</li>
+                    <li class="flex items-center"><span class="text-green-500 mr-2">✦</span> Modélisation Prédictive</li>
+                    <li class="flex items-center"><span class="text-green-500 mr-2">✦</span> NLP (Exploration)</li>
+                </ul>
+            </div>
 
-            <!-- Catégorie Programmation -->
-            <div class="bg-gray-800 p-6 rounded-xl shadow-xl border-t-4 border-red-500 hover:bg-gray-700 transition duration-300">
-                <h3 class="text-xl font-semibold mb-3 text-red-400">Programmation</h3>
-                <ul class="space-y-2 text-gray-400">
-                    <li class="flex items-center"><span class="text-red-500 mr-2">✦</span> Python (Avancé)</li>
-                    <li class="flex items-center"><span class="text-red-500 mr-2">✦</span> Bash Scripting</li>
-                    <li class="flex items-center"><span class="text-red-500 mr-2">✦</span> Git / GitHub</li>
-                    <li class="flex items-center"><span class="text-red-500 mr-2">✦</span> Struct. de Données</li>
-                </ul>
-            </div>
+            <!-- Catégorie Programmation -->
+            <div class="bg-gray-800 p-6 rounded-xl shadow-xl border-t-4 border-red-500 hover:bg-gray-700 transition duration-300">
+                <h3 class="text-xl font-semibold mb-3 text-red-400">Programmation</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li class="flex items-center"><span class="text-red-500 mr-2">✦</span> Python (Avancé)</li>
+                    <li class="flex items-center"><span class="text-red-500 mr-2">✦</span> Bash Scripting</li>
+                    <li class="flex items-center"><span class="text-red-500 mr-2">✦</span> Git / GitHub</li>
+                    <li class="flex items-center"><span class="text-red-500 mr-2">✦</span> Struct. de Données</li>
+                </ul>
+            </div>
 
-            <!-- Catégorie Cloud & Outils -->
-            <div class="bg-gray-800 p-6 rounded-xl shadow-xl border-t-4 border-yellow-500 hover:bg-gray-700 transition duration-300">
-                <h3 class="text-xl font-semibold mb-3 text-yellow-400">Cloud & Outils</h3>
-                <ul class="space-y-2 text-gray-400">
-                    <li class="flex items-center"><span class="text-yellow-500 mr-2">✦</span> Jupyter Notebooks</li>
-                    <li class="flex items-center"><span class="text-yellow-500 mr-2">✦</span> Docker (Bases)</li>
-                    <li class="flex items-center"><span class="text-yellow-500 mr-2">✦</span> AWS/Azure (Exploration)</li>
-                    <li class="flex items-center"><span class="text-yellow-500 mr-2">✦</span> Environnements Linux</li>
-                </ul>
-            </div>
-        </div>
-    </section>
+            <!-- Catégorie Cloud & Outils -->
+            <div class="bg-gray-800 p-6 rounded-xl shadow-xl border-t-4 border-yellow-500 hover:bg-gray-700 transition duration-300">
+                <h3 class="text-xl font-semibold mb-3 text-yellow-400">Cloud & Outils</h3>
+                <ul class="space-y-2 text-gray-400">
+                    <li class="flex items-center"><span class="text-yellow-500 mr-2">✦</span> Jupyter Notebooks</li>
+                    <li class="flex items-center"><span class="text-yellow-500 mr-2">✦</span> Docker (Bases)</li>
+                    <li class="flex items-center"><span class="text-yellow-500 mr-2">✦</span> AWS/Azure (Exploration)</li>
+                    <li class="flex items-center"><span class="text-yellow-500 mr-2">✦</span> Environnements Linux</li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
-    <!-- SECTION PROJETS -->
-    <section id="projects" class="bg-gray-800 border-t border-b border-gray-700">
-        <h2 class="text-4xl font-bold text-center text-indigo-400 mb-12">Mes Projets</h2>
-        <p class="text-center text-xl text-gray-400 mb-10">
-            Une sélection de mes travaux d'analyse et d'apprentissage automatique.
-        </p>
+    <!-- SECTION PROJETS -->
+    <section id="projects" class="bg-gray-800 border-t border-b border-gray-700">
+        <h2 class="text-4xl font-bold text-center text-indigo-400 mb-12">Mes Projets</h2>
+        <p class="text-center text-xl text-gray-400 mb-10">
+            Une sélection de mes travaux d'analyse et d'apprentissage automatique.
+        </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <!-- PROJET 1 : Data Analysis (Exemple) -->
-            <div class="project-card bg-gray-700 p-6 rounded-xl border-b-4 border-blue-500">
-                <h3 class="text-2xl font-bold text-white mb-3">Analyse de Performance Commerciale</h3>
-                <p class="text-gray-400 mb-4">
-                    Projet réalisé en alternance. Utilisation de SQL pour l'extraction et de Power BI pour créer un tableau de bord interactif mesurant les KPIs de vente.
-                </p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="bg-blue-600 text-white text-xs font-medium px-2.5 py-0.5 rounded-full shadow-sm">SQL</span>
-                    <span class="bg-blue-600 text-white text-xs font-medium px-2.5 py-0.5 rounded-full shadow-sm">Power BI</span>
-                    <span class="bg-blue-600 text-white text-xs font-medium px-2.5 py-0.5 rounded-full shadow-sm">KPIs</span>
-                </div>
-                <a href="https://github.com/votre_profil/projet_analyse" target="_blank" class="text-indigo-400 font-semibold hover:text-indigo-200 flex items-center transition duration-300">
-                    Voir sur GitHub
-                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                </a>
-            </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- PROJET 1 : Data Analysis Avancé (KPIs) -->
+            <div class="project-card bg-gray-700 p-6 rounded-xl border-b-4 border-blue-500">
+                <h3 class="text-2xl font-bold text-white mb-3">Dashboard interactif de Suivi des KPIs</h3>
+                <p class="text-gray-400 mb-4">
+                    Création d'un tableau de bord Power BI connecté à une base de données PostgreSQL pour optimiser le suivi de performance commerciale et identifier les leviers de croissance.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-blue-600 text-white text-xs font-medium px-2.5 py-0.5 rounded-full shadow-sm">SQL</span>
+                    <span class="bg-blue-600 text-white text-xs font-medium px-2.5 py-0.5 rounded-full shadow-sm">Power BI</span>
+                    <span class="bg-blue-600 text-white text-xs font-medium px-2.5 py-0.5 rounded-full shadow-sm">Data Viz</span>
+                </div>
+                <!-- LIEN GITHUB MIS À JOUR -->
+                <a href="https://github.com/Mrsaltyx/data-dashboard-kpis" target="_blank" class="text-indigo-400 font-semibold hover:text-indigo-200 flex items-center transition duration-300">
+                    Voir sur GitHub (Exemple)
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+            </div>
 
-            <!-- PROJET 2 : Machine Learning (Exemple) -->
-            <div class="project-card bg-gray-700 p-6 rounded-xl border-b-4 border-green-500">
-                <h3 class="text-2xl font-bold text-white mb-3">Modèle de Prédiction de Prix (M.L.)</h3>
-                <p class="text-gray-400 mb-4">
-                    Projet personnel d'initiation à l'IA. Prédiction des prix immobiliers à l'aide de forêts aléatoires (Random Forest) en Python.
-                </p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="bg-green-600 text-white text-xs font-medium px-2.5 py-0.5 rounded-full shadow-sm">Python</span>
-                    <span class="bg-green-600 text-white text-xs font-medium px-2.5 py-0.5 rounded-full shadow-sm">Scikit-learn</span>
-                    <span class="bg-green-600 text-white text-xs font-medium px-2.5 py-0.5 rounded-full shadow-sm">Régression</span>
-                </div>
-                <a href="https://github.com/votre_profil/projet_ml" target="_blank" class="text-indigo-400 font-semibold hover:text-indigo-200 flex items-center transition duration-300">
-                    Voir sur GitHub
-                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                </a>
-            </div>
+            <!-- PROJET 2 : Machine Learning (Time Series) -->
+            <div class="project-card bg-gray-700 p-6 rounded-xl border-b-4 border-green-500">
+                <h3 class="text-2xl font-bold text-white mb-3">Prédiction de Demande (Séries Temporelles)</h3>
+                <p class="text-gray-400 mb-4">
+                    Utilisation de modèles de Machine Learning (Prophet/ARIMA) pour prévoir la demande de produits futurs, améliorant ainsi la gestion des stocks et l'approvisionnement.
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-green-600 text-white text-xs font-medium px-2.5 py-0.5 rounded-full shadow-sm">Python</span>
+                    <span class="bg-green-600 text-white text-xs font-medium px-2.5 py-0.5 rounded-full shadow-sm">Time Series</span>
+                    <span class="bg-green-600 text-white text-xs font-medium px-2.5 py-0.5 rounded-full shadow-sm">Scikit-learn</span>
+                </div>
+                <!-- LIEN GITHUB MIS À JOUR -->
+                <a href="https://github.com/Mrsaltyx/time-series-forecasting" target="_blank" class="text-indigo-400 font-semibold hover:text-indigo-200 flex items-center transition duration-300">
+                    Voir sur GitHub (Exemple)
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+            </div>
 
-            <!-- PROJET 3 : IA Avancée (Exemple) -->
-            <div class="project-card bg-gray-700 p-6 rounded-xl border-b-4 border-red-500">
-                <h3 class="text-2xl font-bold text-white mb-3">Classification d'Images (Deep Learning)</h3>
-                <p class="text-gray-400 mb-4">
-                    Étude d'un réseau neuronal convolutif (CNN) pour la classification de jeux de données d'images (ex: CIFAR-10).
-                </p>
-                <div class="flex flex-wrap gap-2 mb-4">
-                    <span class="bg-red-600 text-white text-xs font-medium px-2.5 py-0.5 rounded-full shadow-sm">TensorFlow</span>
-                    <span class="bg-red-600 text-white text-xs font-medium px-2.5 py-0.5 rounded-full shadow-sm">CNN</span>
-                    <span class="bg-red-600 text-white text-xs font-medium px-2.5 py-0.5 rounded-full shadow-sm">Deep Learning</span>
-                </div>
-                <a href="https://github.com/votre_profil/projet_deeplearning" target="_blank" class="text-indigo-400 font-semibold hover:text-indigo-200 flex items-center transition duration-300">
-                    Voir sur GitHub
-                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
-                </a>
-            </div>
+            <!-- PROJET 3 : Deep Learning (Vision) -->
+            <div class="project-card bg-gray-700 p-6 rounded-xl border-b-4 border-red-500">
+                <h3 class="text-2xl font-bold text-white mb-3">Détection d'Objets par CNN</h3>
+                <p class="text-gray-400 mb-4">
+                    Implémentation d'un Réseau Neuronal Convolutif (CNN) avec TensorFlow pour la classification ou la détection d'objets sur des datasets publics (ex: COCO ou Fashion-MNIST).
+                </p>
+                <div class="flex flex-wrap gap-2 mb-4">
+                    <span class="bg-red-600 text-white text-xs font-medium px-2.5 py-0.5 rounded-full shadow-sm">TensorFlow</span>
+                    <span class="bg-red-600 text-white text-xs font-medium px-2.5 py-0.5 rounded-full shadow-sm">CNN</span>
+                    <span class="bg-red-600 text-white text-xs font-medium px-2.5 py-0.5 rounded-full shadow-sm">Deep Learning</span>
+                </div>
+                <!-- LIEN GITHUB MIS À JOUR -->
+                <a href="https://github.com/Mrsaltyx/deep-learning-vision" target="_blank" class="text-indigo-400 font-semibold hover:text-indigo-200 flex items-center transition duration-300">
+                    Voir sur GitHub (Exemple)
+                    <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+            </div>
+        </div>
+    </section>
 
-            <!-- NOTE: Ajoutez plus de projets ici ! -->
+    <!-- SECTION CONTACT -->
+    <section id="contact" class="bg-gray-900">
+        <h2 class="text-4xl font-bold text-center text-indigo-400 mb-12">Contactez-Moi</h2>
+        <div class="max-w-xl mx-auto text-center bg-gray-800 p-10 rounded-2xl shadow-2xl border border-gray-700">
+            <p class="text-xl text-gray-300 mb-8">
+                Intéressé(e) par mon profil ou mes projets ? N'hésitez pas à me contacter !
+            </p>
+            <div class="space-y-4">
+                <!-- Email mis à jour avec un placeholder plus pertinent -->
+                <a href="mailto:thomas.thouvenin.dataia@example.com" class="block text-indigo-400 hover:text-indigo-200 text-lg font-medium transition duration-300">
+                    <span class="font-bold">Email :</span> thomas.thouvenin.dataia@example.com
+                </a>
+                <!-- LIEN LINKEDIN MIS À JOUR -->
+                <a href="https://www.linkedin.com/in/thomas-thouvenin-755743292" target="_blank" class="block text-indigo-400 hover:text-indigo-200 text-lg font-medium transition duration-300">
+                    <span class="font-bold">LinkedIn :</span> /in/thomas-thouvenin-755743292
+                </a>
+                <!-- LIEN GITHUB MIS À JOUR -->
+                <a href="https://github.com/Mrsaltyx" target="_blank" class="block text-indigo-400 hover:text-indigo-200 text-lg font-medium transition duration-300">
+                    <span class="font-bold">GitHub :</span> /Mrsaltyx
+                </a>
+            </div>
+        </div>
+    </section>
 
-        </div>
-    </section>
+    <!-- PIED DE PAGE (Footer) -->
+    <footer class="bg-gray-950 text-gray-500 text-center p-6 mt-12 border-t border-gray-800">
+        <p class="text-sm">© 2025</p>
+    </footer>
 
-    <!-- SECTION CONTACT -->
-    <section id="contact" class="bg-gray-900">
-        <h2 class="text-4xl font-bold text-center text-indigo-400 mb-12">Contactez-Moi</h2>
-        <div class="max-w-xl mx-auto text-center bg-gray-800 p-10 rounded-2xl shadow-2xl border border-gray-700">
-            <p class="text-xl text-gray-300 mb-8">
-                Intéressé(e) par mon profil ou mes projets ? N'hésitez pas à me contacter !
-            </p>
-            <div class="space-y-4">
-                <a href="mailto:votre.email@example.com" class="block text-indigo-400 hover:text-indigo-200 text-lg font-medium transition duration-300">
-                    <span class="font-bold">Email :</span> votre.email@example.com
-                </a>
-                <a href="www.linkedin.com/in/thomas-thouvenin-755743292" target="_blank" class="block text-indigo-400 hover:text-indigo-200 text-lg font-medium transition duration-300">
-                    <span class="font-bold">LinkedIn :</span> /in/votreprofil
-                </a>
-                <a href="https://github.com/Mrsaltyx" target="_blank" class="block text-indigo-400 hover:text-indigo-200 text-lg font-medium transition duration-300">
-                    <span class="font-bold">GitHub :</span> /votre_profil
-                </a>
-            </div>
-        </div>
-    </section>
+    <!-- JAVASCRIPT pour le menu mobile -->
+    <script>
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
 
-    <!-- PIED DE PAGE (Footer) -->
-    <footer class="bg-gray-950 text-gray-500 text-center p-6 mt-12 border-t border-gray-800">
-        <p class="text-sm">© 2025</p>
-    </footer>
+        function toggleMenu() {
+            mobileMenu.classList.toggle('hidden');
+        }
 
-    <!-- JAVASCRIPT pour le menu mobile -->
-    <script>
-        const menuButton = document.getElementById('menu-button');
-        const mobileMenu = document.getElementById('mobile-menu');
+        menuButton.addEventListener('click', toggleMenu);
 
-        function toggleMenu() {
-            mobileMenu.classList.toggle('hidden');
-        }
-
-        menuButton.addEventListener('click', toggleMenu);
-
-        // Fermer le menu mobile lors d'un clic sur un lien (pour améliorer l'UX)
-        document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                // S'assurer que le menu se ferme après un clic
-                if (!mobileMenu.classList.contains('hidden')) {
-                    mobileMenu.classList.add('hidden');
-                }
-            });
-        });
-    </script>
+        // Fermer le menu mobile lors d'un clic sur un lien (pour améliorer l'UX)
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                // S'assurer que le menu se ferme après un clic
+                if (!mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+    </script>
 
 </body>
 </html>
