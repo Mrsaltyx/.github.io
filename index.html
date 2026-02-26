@@ -331,7 +331,7 @@
                 const repos = await response.json();
 
                 // Filtre les forks et garde les 6 plus récents
-                const filteredRepos = repos.filter(repo => !repo.fork).slice(0, 6);
+                const filteredRepos = repos.filter(repo => !repo.fork);
 
                 // Génère le HTML pour chaque repo
                 container.innerHTML = filteredRepos.map(repo => `
