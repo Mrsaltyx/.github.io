@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thomas Thouvenin - Data Analyst & Ingénieur IA</title>
+    <title>Thomas Thouvenin - Apprenti Data Analyst & Passionné d'IA</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -23,10 +23,17 @@
             color: #E2E8F0;
             overflow-x: hidden;
         }
-        .bg-grid {
-            background-image: linear-gradient(rgba(129, 140, 248, 0.03) 1px, transparent 1px),
-                              linear-gradient(90deg, rgba(129, 140, 248, 0.03) 1px, transparent 1px);
-            background-size: 50px 50px;
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #1E293B; }
+        ::-webkit-scrollbar-thumb { background: linear-gradient(180deg, #818CF8, #A855F7); border-radius: 4px; }
+
+        /* Gradients & Backgrounds */
+        .gradient-text {
+            background: linear-gradient(135deg, #818CF8 0%, #A855F7 50%, #EC4899 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         .glass {
             background: rgba(30, 41, 59, 0.7);
@@ -34,52 +41,36 @@
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(129, 140, 248, 0.1);
         }
-        .gradient-text {
-            background: linear-gradient(135deg, #818CF8 0%, #A855F7 50%, #EC4899 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .bg-grid {
+            background-image: linear-gradient(rgba(129, 140, 248, 0.03) 1px, transparent 1px),
+                              linear-gradient(90deg, rgba(129, 140, 248, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
         }
-        
-        /* SLIDER LOGIC */
-        .projects-container {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            gap: 1.5rem;
-            padding: 1rem 0 2rem 0;
-            scrollbar-width: none; /* Firefox */
-            -ms-overflow-style: none; /* IE */
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(2deg); }
         }
-        .projects-container::-webkit-scrollbar { display: none; }
-        
-        .project-item {
-            flex: 0 0 100%;
-            scroll-snap-align: start;
+        .orb {
+            position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.4; pointer-events: none; z-index: 0;
         }
+        .orb-1 { width: 400px; height: 400px; background: #6366F1; top: -100px; right: -100px; animation: float 8s infinite; }
+        .orb-2 { width: 350px; height: 350px; background: #EC4899; bottom: 20%; left: -50px; animation: float 10s infinite reverse; }
+
+        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+
+        /* Slider Logic */
+        .projects-slider {
+            display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 1.5rem;
+            padding: 1rem 0 2rem 0; scrollbar-width: none;
+        }
+        .projects-slider::-webkit-scrollbar { display: none; }
+        .project-item { flex: 0 0 100%; scroll-snap-align: start; }
         @media (min-width: 768px) { .project-item { flex: 0 0 calc(50% - 0.75rem); } }
         @media (min-width: 1024px) { .project-item { flex: 0 0 calc(33.333% - 1rem); } }
 
-        .orb {
-            position: absolute;
-            border-radius: 50%;
-            filter: blur(80px);
-            opacity: 0.4;
-            pointer-events: none;
-            z-index: 0;
-        }
-        .orb-1 { width: 400px; height: 400px; background: #6366F1; top: -100px; right: -100px; }
-        .orb-2 { width: 300px; height: 300px; background: #EC4899; bottom: 10%; left: -50px; }
-
-        .reveal { opacity: 0; transform: translateY(20px); transition: all 0.6s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        
-        .nav-link.active::after { transform: translateX(0); }
-        .nav-link::after {
-            content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px;
-            background: linear-gradient(90deg, #818CF8, #A855F7);
-            transform: translateX(-101%); transition: transform 0.3s ease;
-        }
         .loader {
             width: 40px; height: 40px; border: 3px solid rgba(129, 140, 248, 0.2);
             border-top-color: #818CF8; border-radius: 50%; animation: spin 1s linear infinite;
@@ -87,64 +78,127 @@
         @keyframes spin { to { transform: rotate(360deg); } }
     </style>
 </head>
-<body class="bg-slate-900 bg-noise">
+<body class="bg-slate-900">
     <div class="fixed inset-0 bg-grid pointer-events-none"></div>
 
+    <!-- Navigation -->
     <header class="fixed top-0 left-0 right-0 z-50 glass border-b border-indigo-500/20">
         <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="#home" class="text-2xl font-black gradient-text">TT</a>
-            <div class="hidden md:flex space-x-8" id="desktop-nav">
-                <a href="#about" class="nav-link relative overflow-hidden text-slate-300 hover:text-white transition-colors py-1">À Propos</a>
-                <a href="#skills" class="nav-link relative overflow-hidden text-slate-300 hover:text-white transition-colors py-1">Compétences</a>
-                <a href="#projects" class="nav-link relative overflow-hidden text-slate-300 hover:text-white transition-colors py-1">Projets</a>
-                <a href="#contact" class="nav-link relative overflow-hidden text-slate-300 hover:text-white transition-colors py-1">Contact</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#about" class="text-slate-300 hover:text-white transition-colors">À Propos</a>
+                <a href="#projects" class="text-slate-300 hover:text-white transition-colors">Projets</a>
+                <a href="#contact" class="text-slate-300 hover:text-white transition-colors">Contact</a>
             </div>
-            <button id="menu-btn" class="md:hidden text-indigo-400"><i data-lucide="menu"></i></button>
+            <button class="md:hidden text-indigo-400"><i data-lucide="menu"></i></button>
         </nav>
     </header>
 
-    <section id="home" class="min-h-screen flex items-center justify-center relative pt-20">
+    <!-- Hero Section -->
+    <section id="home" class="min-h-screen flex items-center justify-center relative overflow-hidden pt-20">
         <div class="orb orb-1"></div>
         <div class="relative z-10 text-center px-4">
-            <div class="mb-8 scale-in animate-scale-in">
-                <img src="https://placehold.co/150x150/4F46E5/ffffff?text=TT" alt="Thomas" class="w-32 h-32 rounded-full border-4 border-indigo-500/30 mx-auto shadow-2xl">
+            <div class="mb-6 reveal active">
+                <img src="https://placehold.co/150x150/4F46E5/ffffff?text=TT" alt="Profil" class="w-32 h-32 rounded-full border-4 border-indigo-500/30 mx-auto shadow-2xl shadow-indigo-500/20">
             </div>
-            <h1 class="text-5xl md:text-7xl font-black text-white mb-6">Thomas <span class="gradient-text">Thouvenin</span></h1>
-            <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10">Data Analyst chez <span class="text-indigo-400">Amundi</span> & futur Ingénieur IA.</p>
-            <div class="flex flex-wrap justify-center gap-4">
-                <a href="#projects" class="bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-full font-bold transition-all shadow-lg shadow-indigo-500/20">Voir mes projets</a>
-                <a href="https://github.com/Mrsaltyx" target="_blank" class="glass text-white px-8 py-4 rounded-full font-bold hover:bg-indigo-500/10 transition-all border border-indigo-500/30">GitHub</a>
+            <h1 class="text-5xl md:text-7xl font-black text-white mb-6 reveal active">Thomas <span class="gradient-text">Thouvenin</span></h1>
+            <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-10 reveal active">En apprentissage chez <span class="text-indigo-400 font-bold">Amundi</span>, je développe mes compétences en analyse de données avec l'objectif de me spécialiser en IA.</p>
+            <div class="flex flex-wrap justify-center gap-4 reveal active">
+                <a href="#about" class="bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-4 rounded-full font-bold transition-all">Découvrir mon parcours</a>
+                <a href="#projects" class="glass text-white px-8 py-4 rounded-full font-bold border border-indigo-500/30 hover:bg-indigo-500/10 transition-all">Voir mes projets</a>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="py-24 relative overflow-hidden">
+    <!-- Humbler About Section -->
+    <section id="about" class="py-24 relative z-10">
         <div class="max-w-6xl mx-auto px-6">
-            <div class="flex justify-between items-end mb-12 reveal">
-                <div>
-                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Mes Réalisations</h2>
-                    <p class="text-slate-400">Défilez pour explorer l'ensemble de mes travaux GitHub.</p>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-8 flex items-center">
+                        <i data-lucide="user" class="mr-4 text-indigo-400"></i> Mon Profil
+                    </h2>
+                    <div class="space-y-6 text-lg text-slate-400 leading-relaxed">
+                        <p>
+                            Actuellement en alternance chez <span class="text-white font-semibold">Amundi</span>, j'ai la chance d'évoluer au sein d'un environnement exigeant où la donnée est centrale. Mon rôle de <span class="text-indigo-400 font-medium">Data Analyst</span> me permet d'affiner quotidiennement mes bases en manipulation et nettoyage de données.
+                        </p>
+                        <p>
+                            Curieux de nature, j'accorde une grande importance à la compréhension des mécaniques sous-jacentes de l'<span class="text-purple-400 font-semibold">Intelligence Artificielle</span>. Je consacre une partie de mon temps libre à l'apprentissage du Machine Learning et à l'expérimentation de modèles via des projets personnels.
+                        </p>
+                        <div class="grid grid-cols-2 gap-4 pt-6">
+                            <div class="glass p-4 rounded-2xl border border-indigo-500/20">
+                                <h4 class="text-indigo-400 font-bold text-2xl mb-1">Amundi</h4>
+                                <p class="text-xs uppercase tracking-wider text-slate-500">Apprentissage Data</p>
+                            </div>
+                            <div class="glass p-4 rounded-2xl border border-purple-500/20">
+                                <h4 class="text-purple-400 font-bold text-2xl mb-1">IA Focus</h4>
+                                <p class="text-xs uppercase tracking-wider text-slate-500">Objectif futur</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="flex gap-2 mb-2">
+
+                <!-- Learning Pillars -->
+                <div class="reveal">
+                    <div class="glass p-8 rounded-3xl border border-slate-700/50">
+                        <h3 class="text-xl font-bold text-white mb-6">Compétences en développement</h3>
+                        <div class="space-y-6">
+                            <div class="flex items-start gap-4">
+                                <div class="p-3 bg-blue-500/10 rounded-xl text-blue-400"><i data-lucide="database"></i></div>
+                                <div>
+                                    <h4 class="text-white font-bold">Analyse & Manipulation</h4>
+                                    <p class="text-sm text-slate-400">Utilisation régulière de SQL pour l'extraction et de Python (Pandas) pour le traitement.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="p-3 bg-purple-500/10 rounded-xl text-purple-400"><i data-lucide="brain"></i></div>
+                                <div>
+                                    <h4 class="text-white font-bold">Initiation au ML</h4>
+                                    <p class="text-sm text-slate-400">Premiers pas avec Scikit-learn pour la classification et la régression sur des datasets d'entraînement.</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="p-3 bg-green-500/10 rounded-xl text-green-400"><i data-lucide="line-chart"></i></div>
+                                <div>
+                                    <h4 class="text-white font-bold">Visualisation</h4>
+                                    <p class="text-sm text-slate-400">Apprentissage de la mise en forme graphique pour rendre l'information accessible.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section with Slider -->
+    <section id="projects" class="py-24 relative overflow-hidden">
+        <div class="orb orb-2"></div>
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-12 reveal">
+                <div class="max-w-xl">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Mes Travaux</h2>
+                    <p class="text-slate-400">Un aperçu de mes explorations techniques sur GitHub. Chaque dépôt est une opportunité d'apprendre.</p>
+                </div>
+                <div class="flex gap-2 mt-6">
                     <button id="prev" class="p-3 rounded-xl glass border border-indigo-500/30 text-indigo-400 hover:bg-indigo-500/20 transition-all"><i data-lucide="chevron-left"></i></button>
                     <button id="next" class="p-3 rounded-xl glass border border-indigo-500/30 text-indigo-400 hover:bg-indigo-500/20 transition-all"><i data-lucide="chevron-right"></i></button>
                 </div>
             </div>
-
-            <div id="github-projects" class="projects-container reveal">
-                <div class="w-full flex flex-col items-center py-20">
-                    <div class="loader"></div>
-                </div>
+            <div id="github-projects" class="projects-slider">
+                <div class="w-full flex flex-col items-center py-20"><div class="loader"></div></div>
             </div>
         </div>
     </section>
 
+    <!-- Contact -->
     <section id="contact" class="py-24 glass border-t border-indigo-500/10">
         <div class="max-w-4xl mx-auto text-center px-6 reveal">
-            <h2 class="text-3xl font-bold text-white mb-8">On travaille ensemble ?</h2>
+            <h2 class="text-3xl font-bold text-white mb-4">Échangeons ensemble</h2>
+            <p class="text-slate-400 mb-10">Toujours prêt à discuter de data, d'IA ou simplement de nouveaux projets.</p>
             <div class="flex justify-center gap-6">
-                <a href="https://www.linkedin.com/in/thomas-thouvenin-755743292/" target="_blank" class="flex items-center text-slate-300 hover:text-indigo-400 transition-colors"><i data-lucide="linkedin" class="mr-2"></i> LinkedIn</a>
-                <a href="mailto:contact@votremail.com" class="flex items-center text-slate-300 hover:text-indigo-400 transition-colors"><i data-lucide="mail" class="mr-2"></i> Email</a>
+                <a href="https://www.linkedin.com/in/thomas-thouvenin-755743292/" target="_blank" class="bg-indigo-600 hover:bg-indigo-500 text-white px-8 py-3 rounded-xl font-bold transition-all">LinkedIn</a>
+                <a href="https://github.com/Mrsaltyx" target="_blank" class="glass text-white px-8 py-3 rounded-xl font-bold border border-indigo-500/30 transition-all">GitHub</a>
             </div>
         </div>
     </section>
@@ -152,66 +206,54 @@
     <script>
         lucide.createIcons();
 
-        // 1. GITHUB API & SLIDER GENERATION
+        // GitHub API Loader - Fetch ALL repos
         async function loadProjects() {
             const container = document.getElementById('github-projects');
             try {
-                // On récupère tous les repos (max 100 par page)
+                // Fetching all public repos (per_page=100)
                 const response = await fetch('https://api.github.com/users/Mrsaltyx/repos?sort=updated&per_page=100');
                 const repos = await response.json();
-                
                 const filteredRepos = repos.filter(repo => !repo.fork);
                 
+                if (filteredRepos.length === 0) {
+                    container.innerHTML = `<p class="text-slate-400 w-full text-center py-10">Aucun projet public trouvé.</p>`;
+                    return;
+                }
+
                 container.innerHTML = filteredRepos.map(repo => `
                     <div class="project-item">
-                        <div class="glass p-8 rounded-3xl border border-slate-700/50 h-full flex flex-col hover:border-indigo-500/50 transition-all group">
+                        <div class="glass p-8 rounded-3xl border border-slate-700/50 h-full flex flex-col hover:border-indigo-500/50 transition-all">
                             <div class="flex justify-between items-start mb-6">
-                                <div class="p-3 bg-indigo-500/10 rounded-2xl text-indigo-400"><i data-lucide="folder"></i></div>
-                                <a href="${repo.html_url}" target="_blank" class="text-slate-500 hover:text-indigo-400"><i data-lucide="external-link"></i></a>
+                                <div class="p-3 bg-indigo-500/10 rounded-xl text-indigo-400"><i data-lucide="folder"></i></div>
+                                <a href="${repo.html_url}" target="_blank" class="text-slate-500 hover:text-indigo-400 transition-colors"><i data-lucide="external-link"></i></a>
                             </div>
-                            <h3 class="text-xl font-bold text-white mb-3 group-hover:text-indigo-400 transition-colors">${repo.name.replace(/-/g, ' ')}</h3>
+                            <h3 class="text-xl font-bold text-white mb-3">${repo.name.replace(/-/g, ' ')}</h3>
                             <p class="text-slate-400 text-sm leading-relaxed mb-6 flex-grow">
-                                ${repo.description || "Projet axé sur l'analyse de données et l'implémentation de solutions algorithmiques."}
+                                ${repo.description || "Exploration technique en cours sur ce dépôt."}
                             </p>
                             <div class="flex items-center gap-4 text-xs font-mono text-indigo-300">
-                                <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-indigo-500 mr-2"></span>${repo.language || 'Code'}</span>
+                                <span class="flex items-center"><span class="w-2 h-2 rounded-full bg-indigo-500 mr-2"></span>${repo.language || 'Documentation'}</span>
                                 <span class="flex items-center"><i data-lucide="star" class="w-3 h-3 mr-1"></i>${repo.stargazers_count}</span>
                             </div>
                         </div>
                     </div>
                 `).join('');
-                
                 lucide.createIcons();
             } catch (e) {
-                container.innerHTML = `<p class="text-red-400">Erreur de chargement des projets GitHub.</p>`;
+                container.innerHTML = `<p class="text-red-400 w-full text-center">Impossible de charger les projets pour le moment.</p>`;
             }
         }
 
-        // 2. SLIDER NAVIGATION
-        const container = document.getElementById('github-projects');
-        document.getElementById('next').onclick = () => container.scrollBy({ left: container.offsetWidth, behavior: 'smooth' });
-        document.getElementById('prev').onclick = () => container.scrollBy({ left: -container.offsetWidth, behavior: 'smooth' });
+        // Slider Controls
+        const slider = document.getElementById('github-projects');
+        document.getElementById('next').onclick = () => slider.scrollBy({ left: slider.offsetWidth * 0.8, behavior: 'smooth' });
+        document.getElementById('prev').onclick = () => slider.scrollBy({ left: -slider.offsetWidth * 0.8, behavior: 'smooth' });
 
-        // 3. REVEAL ANIMATION
+        // Reveal Animation
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) entry.target.classList.add('active');
-            });
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('active'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-
-        // 4. NAV ACTIVE STATE
-        window.addEventListener('scroll', () => {
-            let current = "";
-            document.querySelectorAll('section').forEach(section => {
-                const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 100) current = section.getAttribute('id');
-            });
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').includes(current)) link.classList.add('active');
-            });
-        });
 
         loadProjects();
     </script>
